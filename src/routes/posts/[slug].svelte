@@ -14,7 +14,6 @@
 	export let post = {} as Post;
 
 	const {
-		title,
 		date,
 		tags,
 		author: { name, authorTitle, picture },
@@ -24,10 +23,14 @@
 </script>
 
 <div class="sm:-mx-5 md:-mx-10 lg:-mx-20 xl:-mx-38 mb-5">
-	<img src={coverImage.url} alt={`Cover image for ${title}`} class="" />
+	<img
+		src={coverImage.url}
+		alt={`Cover image for ${post?.title || "untitled"}`}
+		class=""
+	/>
 </div>
 
-<h1 class="text-4xl font-semibold mb-5">{title}</h1>
+<h1 class="text-4xl font-semibold mb-5">{post?.title || "untitled"}</h1>
 
 <a href="/" class="inline-flex items-center mb-3">
 	<img
