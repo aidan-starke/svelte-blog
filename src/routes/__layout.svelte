@@ -14,7 +14,7 @@
 
 <script>
 	import "../app.css";
-	import Nav from "@/libs/Nav.svelte";
+	import Nav from "@/libs/nav.svelte";
 	import { onMount } from "svelte";
 	import { themeChange } from "theme-change";
 	import "../app.css";
