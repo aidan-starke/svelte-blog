@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type {Pages} from "@/libs/types";
+	import type { Pages } from "@/libs/types";
 
 	import ThemeSelect from "@/libs/theme-select.svelte";
 	export let pages = [] as Pages;

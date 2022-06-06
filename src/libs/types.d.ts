@@ -13,7 +13,7 @@ export type Posts = Array[Post];
 
 export interface LoadParams {
 	fetch: (url: string) => Promise<Response>;
-	params: Record<string, string>
+	params: Record<string, string>;
 }
 
 export interface Page {

@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-	import type {LoadParams, Post} from "@/libs/types";
+	import type { LoadParams, Post } from "@/libs/types";
 
 	export const load = async ({ fetch, params: { slug } }: LoadParams) => {
 		const res = await fetch(`/posts/${slug}.json`);
 		if (res.ok) {
-			const { post } = await res.json() as { post: Post };
+			const { post } = (await res.json()) as { post: Post };
 			return { props: { post } };
 		}
 	};

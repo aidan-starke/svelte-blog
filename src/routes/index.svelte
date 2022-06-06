@@ -4,7 +4,7 @@
 	export const load = async ({ fetch }: LoadParams) => {
 		const res = await fetch("/posts.json");
 		if (res.ok) {
-			const { posts } = await res.json() as { posts: Posts };
+			const { posts } = (await res.json()) as { posts: Posts };
 			return { props: { posts } };
 		}
 	};
