@@ -9,7 +9,7 @@
 </script>
 
 <script>
-	export let post;
+	export let post = {};
 
 	const {
 		title,

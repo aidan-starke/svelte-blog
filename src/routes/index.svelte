@@ -16,8 +16,6 @@
 	<title>Svelte Blog | Welcome</title>
 </svelte:head>
 
-<h1 class="text-4l mb-10 font-extrabold">Svelte Blog</h1>
-
 {#each posts as { title, slug, excerpt, coverImage, tags }}
 	<div class="card text-center shadow-2xl mb-20">
 		<figure class="px-10 pt-10">
