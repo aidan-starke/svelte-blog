@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Pages } from "@/libs/types";
 
+	import { base } from "$app/paths";
 	import ThemeSelect from "@/libs/theme-select.svelte";
 	export let pages = [] as Pages;
 </script>
@@ -29,7 +30,7 @@
 			>
 				<li><a href="/">Home</a></li>
 				{#each pages as { title, slug }}
-					<li><a href={slug}>{title}</a></li>
+					<li><a href={`${base}/${slug}`}>{title}</a></li>
 				{/each}
 			</ul>
 		</div>
