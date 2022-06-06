@@ -1,15 +1,17 @@
-<script context="module">
-	export const load = async ({ fetch, params: { slug } }) => {
+<script context="module" lang="ts">
+	import type {LoadParams, Post} from "@/libs/types";
+
+	export const load = async ({ fetch, params: { slug } }: LoadParams) => {
 		const res = await fetch(`/posts/${slug}.json`);
 		if (res.ok) {
-			const { post } = await res.json();
+			const { post } = await res.json() as { post: Post };
 			return { props: { post } };
 		}
 	};
 </script>
 
-<script>
-	export let post = {};
+<script lang="ts">
+	export let post = {} as Post;
 
 	const {
 		title,
@@ -53,6 +55,6 @@
 	</div>
 {/if}
 
-<article div class="prose">
+<article class="prose">
 	{@html html}
 </article>

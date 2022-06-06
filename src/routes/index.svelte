@@ -1,15 +1,17 @@
-<script context="module">
-	export const load = async ({ fetch }) => {
+<script context="module" lang="ts">
+	import type { LoadParams, Posts } from "@/libs/types";
+
+	export const load = async ({ fetch }: LoadParams) => {
 		const res = await fetch("/posts.json");
 		if (res.ok) {
-			const { posts } = await res.json();
+			const { posts } = await res.json() as { posts: Posts };
 			return { props: { posts } };
 		}
 	};
 </script>
 
-<script>
-	export let posts;
+<script lang="ts">
+	export let posts: Posts;
 </script>
 
 <svelte:head>
@@ -41,4 +43,3 @@
 		</div>
 	</div>
 {/each}
-`;

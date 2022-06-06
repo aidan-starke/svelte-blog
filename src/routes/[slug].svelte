@@ -1,15 +1,17 @@
-<script context="module">
-	export const load = async ({ fetch, params: { slug } }) => {
+<script context="module" lang="ts">
+	import type {LoadParams, Page} from "@/libs/types";
+
+	export const load = async ({ fetch, params: { slug } }: LoadParams) => {
 		const res = await fetch(`/pages/${slug}.json`);
 		if (res.ok) {
-			const { page } = await res.json();
+			const { page } = await res.json() as { page: Page };
 			return { props: { page } };
 		}
 	};
 </script>
 
-<script>
-	export let page;
+<script lang="ts">
+	export let page: Page;
 </script>
 
 <svelte:head>

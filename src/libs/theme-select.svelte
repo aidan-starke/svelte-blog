@@ -3,7 +3,7 @@
 		data-choose-theme
 		class="select select-bordered select-primary text-primary-content bg-primary"
 	>
-		<option disabled="disabled" selected="selected">Choose a theme</option>
+		<option>Choose a theme</option>
 		<option value="acid">Acid</option>
 		<option value="aqua">Aqua</option>
 		<option value="autumn">Autumn</option>
